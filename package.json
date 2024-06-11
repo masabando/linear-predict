@@ -12,8 +12,13 @@
   "dependencies": {
     "@tensorflow/tfjs": "^4.20.0",
     "@tensorflow/tfjs-vis": "^1.5.1",
+    "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-bootstrap": "^2.10.2",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.77.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
