@@ -20,7 +20,7 @@ ChartJS.register(
   Legend
 );
 
-export default function Graph({ dataSet = [] }) {
+export default function Graph({ dataSet = [], predictedDataSet = [] }) {
   const options = {
     responsive: true,
     plugins: {
@@ -28,21 +28,44 @@ export default function Graph({ dataSet = [] }) {
         position: 'top'
       },
       title: {
-        display: true,
-        text: 'chart',
+        display: false,
       },
     },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'x'
+        },
+        min: 0,
+        max: 100,
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'y'
+        },
+        min: 0,
+        max: 250,
+      }
+    }
   };
 
   const data = {
     labels: dataSet.map(d => d.x),
     datasets: [
       {
-        label: 'Dataset 1',
-        data: dataSet.map(d => d.y),
+        label: 'training data',
+        data: dataSet,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
+      {
+        label: 'prediction data',
+        data: predictedDataSet,
+        borderColor: 'rgb(54, 162, 235)',
+        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+      }
     ],
   };
 
